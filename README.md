@@ -1,31 +1,72 @@
-### Build Something Beautiful & Meaningful
+## Phase Two Self Assessment Challenge
 
-#### Learning Competencies
-  * Building a web application from scratch
-  * Managing the development process
+Welcome to the Phase Two Self Assessment. At this point in Phase Two, you should have the skills to complete this challenge. Please give yourself a time box of 3 hours to work on this. Commit early and often.
 
-#### Summary
-You should work by yourself.
+If you don't finish this challenge in three hours, be sure to make a clear, concise commit at the end of three hours then feel free to continue working after time is up.
 
-Day 1 of phase 2 is the first day you can and should start working on your passion project. By Week 6 Wednesday, you should have reached MVP for your passion project. What you present and produce is considered in moving into phase 3. It is part of your overall assessment of how much you learned in phase 2.
+Note: We don't expect you to have all the skills committed to memory right now. Use all the resources you've accumulated over the past week!
 
-You've learned a lot in phase 2: Sinatra, Active Record, JavaScript, Agile, and much more. Each of these tools is useful in its own right, but together, they give you something much more powerful — the ability to build a web application from nothing.
+Good luck!
 
-For this challenge, your assignment is to build something. It can be as practical or trivial as you would want, as long as it is a 100% functional, full-stack web application.
+# Channel Subscription Application
 
-You can build anything you want, provided that it meets the following requirements:
+By now you should be familiar with creating basic web applications using Sinatra. In this challenge you'll be building a simple channel subscription application for subscribers of a cable company. This will give you a chance to demonstrate your proficiency with the web by writing code for models, views, and controllers as well as authentication, basic HTML, and some CSS.
 
-- It has a database
-- Construct a controller that has at least 1 RESTful resource
-- It uses an API (what does this mean?! explore!)
-- It is styled
-- It utilizes JavaScript
-- It is deployed to Heroku
+The problem is broken into multiple parts. You should complete each part before moving on to the next. We've given approximate timeboxes for each part to help you make good progress. 
 
-Once you've come up with an idea, get one of your teachers to approve it.
+### Release 1: Authentication (Timing ~ 60 min)
 
-### Resources
-- [List of Public API's](https://www.publicapis.com/)
-- [Mashape - List of API's](https://www.mashape.com/)
-- [Programmable Web](http://www.programmableweb.com/)
-- [Postman - REST Client](https://chrome.google.com/webstore/detail/postman-rest-client-packa/fhbjgbiflinjbdggehcddcbncdddomop?hl=en)
+Authentication is a central concern of most web applications. We're going to start by creating a simple app that does nothing more than authenticate a user.
+
+#### User Model
+
+You have an empty `User` model and a database with a `users` table. Add validations to the `User` model which guarantee the following:
+
+1. Every user has an email
+2. Every user's email is unique
+3. Every user has a password
+
+You should not store the user's password directly in the database.
+
+#### Sign Up, Log In, Log Out
+
+Create views to allow a user to:
+
+1. Sign up as a new user
+2. Log in as an existing user
+3. Log out as an existing user
+
+### Release 2: Channels  (Timing ~ 30 min)
+
+Users can add and remove channels from their user account. Users can subscribe to many channels and a channel can have many subscribers. Channels are created for you in the database seeds.
+
+#### Associations
+
+We've already defined the three models for you. You'll need to create the associations between them.
+
+The `User` model should have at least this one association (among others):
+
+- `user.channels` should return the list of `Channel` models subscribed to by the user.
+
+The `Channel` model should have at least this association (among others):
+
+- `channel.subscribers` should return the list of `User` models subscribed to the channel.
+
+**Note**: Before you move on, be sure your associations are working as expected. Try using `rake console` to manually test them.
+
+### Release 3: CRUD It Up (Timing ~ 90 min)
+
+With user authentication in place, let's create some CRUD pages.
+
+1. without logging in, a user can see a list of all channels
+2. after logging in, a user can see a user profile page including:
+  * a list of the user's channels
+  * the total price per month of all the user's channels
+  * fyi - after logging in, this is the page a user should be on
+3. a page to show information about a single channel including:
+  * a count of the total number of subscribers
+  * a button to subscribe to the channel (if the user is not already subscribed)
+  * a button to unsubscribe from the channel (if the user is already subscribed)
+  * the channel's price
+
+After three hours create a pull request and tag your instructors. Feel free to continue working on this challenge, but be sure to mark where you are after three hours.
