@@ -1,9 +1,25 @@
-<h1>Welcome to Website</h1>
+<div id="index-view">
+  <h1>Welcome to Website</h1>
 
-<% if logged_in? %>
-  <a href="/profile/<%= @user.id %>">Profile</a>
-<% else %>
-  <a href="/register">Register</a>
-  <a href="/login">Login</a>
-<% end %>
+  <div id="site-news">
+    <p>Some good words and pictures about the website.</p>
+  </div>
+
+  <div class="section group">
+    <div class="col span_1_of_2" id="box1">
+    This is column 1/box1
+    </div>
+
+    <div class="col span_1_of_2" id="box2">
+      <% if logged_in? %>
+        <%= erb :'/groups/index', layout: false %>
+      <% else %>
+        <%= erb :'/users/new', layout: false %>
+        <a id="login-link" href="/login">Login</a>
+      <% end %>
+    </div>
+  </div>
+
+</div>
+
 

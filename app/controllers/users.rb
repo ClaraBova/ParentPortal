@@ -1,17 +1,22 @@
 #new
 get '/register' do
   @user = User.new
-  erb :'/users/new'
+  if request.xhr?
+    erb :'/users/new', layout: false
+  else
+    erb :'/users/new'
+  end
 end
 
 #create
 post '/register' do
   @user = User.new(params[:user])
   if @user.save
-    session[:user_id]
+    session[:username]
     redirect :"/profile/#{@user.username}"
   else
     status 422
+    @errors = @user.errors.full_messages
     erb :'/users/new'
   end
 end
