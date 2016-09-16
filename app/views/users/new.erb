@@ -17,7 +17,9 @@
     </div>
     <div>
       <label for="user_type">User Type:</label>
-      <input id="user_type" type="text" name="user[user_type]" placeholder="Change to Radio Buttons">
+      <input id="user_type" type="radio" name="user[user_type]" value="basic"> Parent/Caregiver
+      <input id="user_type" type="radio" name="user[user_type]" value="business_owner"> Business Owner
+      <input id="user_type" type="radio" name="user[user_type]" value="community_organizer"> Community Organizer<br>
     </div>
     <div>
       <label for="location">Location:</label>
@@ -27,5 +29,6 @@
             <option value="<%= location.city %>, <%= location.state %>">
           <% end %>
         </datalist>
+      </div>
     <button type="submit" class="btn btn-default">Submit</button>
   </form>
