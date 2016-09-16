@@ -36,6 +36,8 @@ end
 
 #show
 get '/profile/:username' do
+  p params[:username]
   @user = User.find_by(username: params[:username])
+  p @user
   erb :'/users/show'
 end

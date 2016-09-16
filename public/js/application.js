@@ -6,8 +6,8 @@ $(document).ready(function () {
     var url = $(this).attr('href')
 
     $.ajax({url}).done(function(response){
-      $('#box2').html(response);
-      $('#box2').append("<a id='register-link' href='/register'>Register</a>")
+      $('#section-3').html(response);
+      $('#section-3').append("<a id='register-link' href='/register'>Register</a>")
     });
   });
   // Switch Box 2 to Register
@@ -17,8 +17,8 @@ $(document).ready(function () {
     var url = $(this).attr('href')
 
     $.ajax({url}).done(function(response){
-      $('#box2').html(response);
-      $('#box2').append("<a id='login-link' href='/login'>Login</a>")
+      $('#section-3').html(response);
+      $('#section-3').append("<a id='login-link' href='/login'>Login</a>")
     });
   });
 
@@ -35,7 +35,9 @@ $(document).ready(function () {
 
     $ajax.done(function(response){
       console.log(response)
-      $('#section-4').html(response);
+      $('#head-section').addClass('no-bottom-border-radius');
+      $('#section-2').html(response);
+      $('#section-2').removeClass('hide')
     })
   });
 });

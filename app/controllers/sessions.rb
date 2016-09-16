@@ -13,6 +13,7 @@ post '/login' do
   @user = User.authenticate(user_params[:email], user_params[:password])
   if @user
     session[:username] = @user.username
+    session[:location] = @user.location
     redirect :"/"
   else
     status 422

@@ -22,10 +22,6 @@ class User < ActiveRecord::Base
     return user if user && user.password == password
   end
 
-  def local_groups
-    Group.where(location: self.location)
-  end
-
   def location_city_state
     self.location.city + ", " + self.location.state
   end

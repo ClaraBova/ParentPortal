@@ -1,17 +1,15 @@
-<h2>Groups</h2>
-
 <% if logged_in? %>
   <div id="create-group-link"><a href="/groups/new">Create New Group</a></div>
 <% end %>
 
 <div id="area-groups">
-  <h3>Local groups in <%= current_user.location_city_state %> Groups</h3>
-    <div>
-      <% current_user.local_groups.each do |group| %>
-        <div class="group-name"><%= group.name %></div>
+    <% session[:location].local_groups.each do |group| %>
+      <div class="group-summary">
+        <div class="group-name bold"><a href="/groups/<%= group.id %>"><%= group.name %></a></div>
         <div class="group-description"><%= group.description %></div>
-      <% end %>
-    </div>
+        <div class="group-events">Upcoming Event: 0</div>
+      </div>
+    <% end %>
 </div>
 
 
