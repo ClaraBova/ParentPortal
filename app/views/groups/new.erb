@@ -1,0 +1,24 @@
+<h2>Create New Group</h2>
+
+  <%= erb :'/_errors', layout: false %>
+
+  <div class="form">
+    <form action="/groups" method="POST">
+      <div>
+        <label for="name">Name:</label>
+        <input id="name" type="text" name="group[name]" placeholder="Group Name">
+      </div>
+      <div>
+       <label for="description">Description:</label>
+       <textarea id="description" rows="5" cols="50" name="group[description]" placeholder="Tell others about the group."></textarea>
+      </div>
+      <label for="location">Location:</label>
+      <input list="location" placeholder="Where is your group based?" name="group[location]">
+      <datalist id="location">
+        <% @locations.each do |location| %>
+          <option value="<%= location.city %>, <%= location.state %>">
+        <% end %>
+      </datalist>
+      <button type="submit">Create</button>
+    </form>
+  </div>

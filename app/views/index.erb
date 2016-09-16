@@ -1,13 +1,14 @@
 <div id="index-view">
   <h1>Welcome to Website</h1>
 
-  <div id="site-news">
+  <div class="index-section" id="site-news">
     <p>Some good words and pictures about the website.</p>
   </div>
 
-  <div class="section group">
+
+  <div class="section group" id="center-section">
     <div class="col span_1_of_2" id="box1">
-    This is column 1/box1
+      <%= erb :'/events/index', layout: false %>
     </div>
 
     <div class="col span_1_of_2" id="box2">
@@ -20,6 +21,25 @@
     </div>
   </div>
 
+  <% if !logged_in? %>
+    <div class="index-section">
+      <span class="bold">Find groups and events in your location:</span>
+      <form id="location-finder" action="/sessions/location" method="POST">
+        <label for="location">Location:</label>
+        <input list="location" placeholder="Find your location:" name="location">
+        <datalist id="location">
+          <% @locations.each do |location| %>
+            <option value="<%= location.city %>, <%= location.state %>">
+          <% end %>
+        </datalist>
+        <button type="submit">Go!</button>
+      </form>
+    </div>
+  <% end %>
+
+  <div class="index-section" id="section-4">
+
+  </div>
 </div>
 
 

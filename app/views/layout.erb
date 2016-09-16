@@ -12,10 +12,14 @@
 <body>
   <nav>
     <ul>
+      <li><a href="/">Home</a></li>
       <% if logged_in? %>
         <li><a href="/profile/<%= current_user.username %>">Profile</a></li>
+        <li><form class="logout" action="/logout" method="POST">
+          <input type="hidden" name="_method" value="DELETE">
+          <input id="logout" type="submit" value="Logout">
+        </form></li>
       <% end %>
-      <li><a href="/">Home</a></li>
     </ul>
   </nav>
   <div class="container">

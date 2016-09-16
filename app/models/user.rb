@@ -1,8 +1,11 @@
 class User < ActiveRecord::Base
    include BCrypt
+   belongs_to :location
 
   validates :username, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
+  validates :user_type, presence: true
+  validates :location_id, presence: true
   validate :password_present
 
   def password
@@ -17,6 +20,14 @@ class User < ActiveRecord::Base
   def self.authenticate(email, password)
     user = find_by(email: email)
     return user if user && user.password == password
+  end
+
+  def local_groups
+    Group.where(location: self.location)
+  end
+
+  def location_city_state
+    self.location.city + ", " + self.location.state
   end
 
   private
