@@ -1,4 +1,12 @@
-<h2>Upcoming Events</h2>
-List of upcoming events.
+<% if logged_in? %>
+  <div id="create-event-link"><a href="/events/new">Create New Event</a></div>
+<% end %>
 
-
+<div id="area-events">
+  <% session[:location].local_events.each do |event| %>
+    <div class="event-summary">
+      <div class="event-name bold"><a href="/events/<%= event.id %>"><%= event.name %></a></div>
+      <div class="event-description"><%= event.description %></div>
+    </div>
+  <% end %>
+</div>

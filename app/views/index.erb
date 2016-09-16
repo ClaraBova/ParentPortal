@@ -21,6 +21,7 @@
   </div>
 
   <div class="index-section hide" id="section-2">
+  <!-- Location Finder Drop-down -->
   </div>
 
   <% if !logged_in? %>
@@ -31,7 +32,10 @@
   <% end %>
 
   <div class="index-section hide" id="section-4">
-
+     <% if logged_in? %>
+        <h2>Your Local Groups</h2>
+        <%= erb :'/events/index', layout: false %>
+      <% end %>
   </div>
 
 </div>

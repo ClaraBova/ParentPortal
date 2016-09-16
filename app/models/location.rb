@@ -9,4 +9,8 @@ class Location < ActiveRecord::Base
     Group.where(location_id: self.id)
   end
 
+  def local_events
+    Event.where(location_id: self.id)
+  end
+
 end

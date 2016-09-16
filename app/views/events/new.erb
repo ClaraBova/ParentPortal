@@ -1,0 +1,28 @@
+<div id="events-new-view">
+  <h2>Host a event</h2>
+
+  <%= erb :'/_errors', layout: false %>
+
+  <form action="/events" method="POST">
+    <div>
+      <label for="name">Give your event a name:</label>
+      <input type="text" name="event[name]" placeholder="Playdate at Balboa Park">
+    </div>
+    <div>
+      <label for="time">When:</label>
+      <input type="datetime" name="event[time]" placeholder="2017-05-22 12:00">
+    </div>
+    <div>
+      <label for="location">City, State:</label>
+      <input id="location" name="event[location]" value="<%= current_user.location %>"
+    <div>
+      <label for="location_description">Give attendees more information about the location, like an address or meeting point:</label>
+      <input id="location_description" type="text" name="event[location]" placeholder="Balboa Park"
+    </div>
+    <div>
+      <input type="hidden" name="event[host_id]" value="<%= current_user.id %>">
+      <input type="submit" value="Create"
+    </div>
+  </form>
+
+</div>

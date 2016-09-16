@@ -4,6 +4,8 @@ class CreateGroups < ActiveRecord::Migration
       t.string :name, null: false
       t.string :description
       t.integer :location_id, null:false
+
+      t.timestamps(null: false)
     end
   end
 end
