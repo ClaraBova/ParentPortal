@@ -76,6 +76,11 @@ nav ul {
   margin-bottom: 10px;
 }
 
+.register {
+  width: 100%;
+  border: 1px solid black;
+}
+
 h1 {
   color: yellow;
 }

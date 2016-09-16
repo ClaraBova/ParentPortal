@@ -5,15 +5,15 @@
   <form action="/register" method="POST">
     <div>
       <label for="username">Username:</label>
-      <input id="username" type="text" name="user[username]" placeholder="Username">
+      <input class="register" id="username" type="text" name="user[username]" placeholder="Username">
     </div>
     <div>
      <label for="email">Email:</label>
-     <input id="email" type="text" name="user[email]" placeholder="Email">
+     <input class="register" id="email" type="text" name="user[email]" placeholder="Email">
     </div>
     <div>
       <label for="password">Password:</label>
-      <input id="password" type="password" name="user[password]" placeholder="Password">
+      <input class="register" id="password" type="password" name="user[password]" placeholder="Password">
     </div>
     <div>
       <label for="user_type">User Type:</label>
@@ -23,7 +23,7 @@
     </div>
     <div>
       <label for="location">Location:</label>
-      <input id="location" list="location" placeholder="San Diego, CA" name="user[location]">
+      <input class="register" id="location" list="location" placeholder="San Diego, CA" name="user[location]">
         <datalist id="location">
           <% @locations.each do |location| %>
             <option value="<%= location.city %>, <%= location.state %>">
