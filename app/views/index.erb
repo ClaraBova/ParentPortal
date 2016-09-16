@@ -1,27 +1,9 @@
 <div id="index-view">
-  <h1>Welcome to Website</h1>
+  <h1>Welcome to Parent's Portal</h1>
 
-  <div class="index-section" id="site-news">
-    <p>Some good words and pictures about the website.</p>
-  </div>
 
-  <div class="section group" id="two-column-section">
-    <div class="col span_1_of_2" id="box1">
-      <%= erb :'/events/index', layout: false %>
-    </div>
-
-    <div class="col span_1_of_2" id="box2">
-      <% if logged_in? %>
-        <%= erb :'/groups/index', layout: false %>
-      <% else %>
-        <%= erb :'/users/new', layout: false %>
-        <a id="login-link" href="/login">Login</a>
-      <% end %>
-    </div>
-  </div>
-
-  <% if !logged_in? %>
-    <div class="index-section">
+  <div class="index-section" id="head-section">
+    <% if !logged_in? %> 
       <span class="bold">Find groups and events in your location:</span>
       <form id="location-finder" action="/sessions/location" method="POST">
         <label for="location">Location:</label>
@@ -33,12 +15,41 @@
         </datalist>
         <button type="submit">Go!</button>
       </form>
+    <% end %>
+  </div>
+
+  <div class="index-section" id="index-banner">
+  </div>
+
+  <div class="index-section" id="section-2">
+    <div id="box2">
+      <% if logged_in? %>
+        <%= erb :'/groups/index', layout: false %>
+      <% else %>
+        <%= erb :'/users/new', layout: false %>
+        <a id="login-link" href="/login">Login</a>
+      <% end %>
     </div>
-  <% end %>
+  </div>
+
+<!--   <div class="section group" id="two-column-section">
+    <div class="col span_1_of_2" id="box1">
+    </div>
+
+    <div class="col span_1_of_2" id="box2">
+    </div>
+  </div> -->
+
+  <div class="index-section" id="section-3">
+    <div id="box1">
+      <%= erb :'/events/index', layout: false %>
+    </div>
+  </div>
 
   <div class="index-section" id="section-4">
 
   </div>
+
 </div>
 
 

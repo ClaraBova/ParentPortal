@@ -3,11 +3,14 @@
   border: solid 1px black;
   margin: 0 0 3% 0;
   border-radius: 20px;
-  background-color: white;
+/*  background-color: white;*/
 }
 
 body {
   background-color: white;
+  background-size: cover;
+  background-image: url("../img/museum.jpeg");
+  background-repeat: no-repeat;
 }
 
 .bold {
@@ -44,7 +47,7 @@ nav ul {
   width: 80%;
   margin: auto;
   padding: 25px;
-  background-color: white;
+  /*background-color: white;*/
   border-radius: 20px;
 }
 
@@ -62,6 +65,13 @@ nav ul {
   border: 1px solid black;
   clear: both;
   margin-bottom: 10px;
+}
+
+h1 {
+  color: yellow;
+}
+
+#index-banner {
 }
 
 .index-section {
