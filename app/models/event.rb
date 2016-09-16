@@ -1,5 +1,6 @@
 class Event < ActiveRecord::Base
   belongs_to :host, class_name: "User"
+  belongs_to :location
   has_many :event_attendees
   has_many :attendees, through: :event_attendees
 

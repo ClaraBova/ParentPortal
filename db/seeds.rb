@@ -8,4 +8,4 @@ npParents = Group.create(name: "South Park Parents", description: "Bringing Nort
 evParents = Group.create(name: "East Village Parents", description: "Bringing East Village parents together for playdates, events, and sharing info", location: san_diego)
 liParents = Group.create(name: "Little Italy Parents", description: "Bringing Little Italy parents together for playdates, events, and sharing info", location: chicago)
 
-BalboaPark = Event.create(name: "Playdate at Balboa Park", description: "Monthly meetup at Balboa Park", host: clara, time: "2017-05-22 12:00", location_id: 1, location_description: "Balboa Park")
+BalboaPark = Event.create(name: "Playdate at Balboa Park", description: "Monthly meetup at Balboa Park", host: clara, time: "2017-05-22 12:00", location: san_diego, location_description: "Balboa Park")

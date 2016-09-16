@@ -1,0 +1,8 @@
+<div class="events-section">
+  <h2><%= @event.name %></h2>
+  Descriptions: <%= @event.description %>
+  Host: <%= @event.host.username %>
+  When: <%= @event.time.to_formatted_s(:long) %>
+  Where: <%= @event.location.city_state %>
+  <%= @event.location_description %>
+</div>

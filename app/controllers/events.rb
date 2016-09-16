@@ -10,24 +10,24 @@ get '/events/new' do
   end
 end
 
-# #create HOST POTLUCK
-# post '/events' do
-#   potluck_params = params[:potluck]
-#   @potluck = Potluck.new(potluck_params)
-#   if @potluck.save
-#     redirect "/potlucks/#{@potluck.id}"
-#   else
-#     status 422
-#     @errors = @potluck.errors.full_messages
-#     erb :'/potlucks/new'
-#   end
-# end
+#create HOST EVENT
+post '/events' do
+  event_params = params[:event]
+  @event = Event.new(event_params)
+  if @event.save
+    redirect "/events/#{@event.id}"
+  else
+    status 422
+    @errors = @event.errors.full_messages
+    erb :'/events/new'
+  end
+end
 
-# #show
-# get '/potlucks/:id' do
-#   @potluck = Potluck.find(params[:id])
-#   erb :'/potlucks/show'
-# end
+#show
+get '/events/:id' do
+  @event = Event.find(params[:id])
+  erb :'/events/show'
+end
 
 # #edit
 # get '/potlucks/:id/edit' do

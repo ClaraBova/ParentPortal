@@ -1,5 +1,6 @@
 a {
   text-decoration: none;
+  color: black;
 }
 
 a:visited {
@@ -55,8 +56,8 @@ nav ul {
   border-radius: 20px;
 }
 
-#create-group-link {
-  margin-bottom: 5%;
+#create-group-link, #create-event-link {
+  margin-bottom: 2%;
 }
 
 .group-summary {
@@ -86,7 +87,7 @@ h1 {
   background-color: #DEDCDC;
 }
 
-.group-section {
+.group-section, .events-section {
   padding: 2% 5% 2% 5%;
   margin-bottom: 1%;
   border-radius: 20px;

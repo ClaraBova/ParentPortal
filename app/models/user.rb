@@ -22,10 +22,6 @@ class User < ActiveRecord::Base
     return user if user && user.password == password
   end
 
-  def location_city_state
-    self.location.city + ", " + self.location.state
-  end
-
   private
   def password_present
     errors.add(:password, "cannot be blank") if self.password == ""
