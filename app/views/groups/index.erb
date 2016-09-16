@@ -3,13 +3,15 @@
 <% end %>
 
 <div id="area-groups">
-    <% session[:location].local_groups.each do |group| %>
+  <% if current_location %>
+    <% current_location.local_groups.each do |group| %>
       <div class="group-summary">
         <div class="group-name bold"><a href="/groups/<%= group.id %>"><%= group.name %></a></div>
         <div class="group-description"><%= group.description %></div>
         <div class="group-events">Upcoming Event: 0</div>
       </div>
     <% end %>
+  <% end %>
 </div>
 
 
