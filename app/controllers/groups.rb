@@ -47,29 +47,4 @@ get '/groups/:id' do
   erb :'/groups/show'
 end
 
-# #edit
-# get '/potlucks/:id/edit' do
-#   @potluck = Potluck.find(params[:id])
-#   erb :'/potlucks/edit'
-# end
 
-# #update
-# put '/potlucks/:id' do
-#   @potluck = Potluck.find(params[:id])
-#   potluck_params = params[:potluck]
-#   @potluck.update_attributes(name: potluck_params[:name], time: potluck_params[:time], location: potluck_params[:location])
-#   if @potluck.save
-#     redirect "/potlucks/#{@potluck.id}"
-#   else
-#     status 422
-#     @errors = @potluck.errors.full_messages
-#     erb :'/potlucks/edit'
-#   end
-# end
-
-# #delete
-# delete '/potlucks/:id' do
-#   @potluck = Potluck.find(params[:id])
-#   @potluck.destroy
-#   redirect '/'
-# end
