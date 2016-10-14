@@ -1,0 +1,51 @@
+<div id="index-view">
+  <h1>Welcome to Parent's Portal</h1>
+
+  <div class="index-section" id="head-section">
+    <% if logged_in? %>
+      <h2>Your Local Groups</h2>
+      <%= erb :'/groups/index', layout: false %>
+    <% else %>
+      <span class="bold">Find groups and events in your location:</span>
+      <form id="location-finder" action="/sessions/location" method="POST">
+        <label for="location">Location:</label>
+        <input list="location" placeholder="Find your location:" name="location">
+        <datalist id="location">
+          <% @locations.each do |location| %>
+            <option value="<%= location.city %>, <%= location.state %>">
+          <% end %>
+        </datalist>
+        <button type="submit">Go!</button>
+      </form>
+    <% end %>
+  </div>
+
+  <div class="index-section hide" id="section-2">
+  <!-- Location Finder Drop-down -->
+  </div>
+
+  <% if !logged_in? %>
+    <div class="index-section" id="section-3">
+      <%= erb :'/users/new', layout: false %>
+      <a id="login-link" href="/login">Login</a>
+    </div>
+  <% end %>
+
+  <% if logged_in? %>
+    <div class="index-section" id="section-4">
+      <h2>Your Local Groups</h2>
+      <%= erb :'/events/index', layout: false %>
+    </div>
+  <% end %>
+
+  <div>
+    <div class="index-section">
+    <h2>Items for Sale:</h2>
+      Ruby Rails Skydive Action Figure $24.99<br>
+      <a href="http://www.goldieblox.com/products/ruby-rails-skydive-action-figure"><img height=300px src="img/ruby_rails.jpg"></a>
+
+  </div>
+
+</div>
+
+

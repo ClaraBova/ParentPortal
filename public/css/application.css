@@ -1,0 +1,112 @@
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+
+body {
+  background-color: white;
+  background-size: cover;
+  background-image: url("../img/museum.jpeg");
+  background-repeat: no-repeat;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.hide {
+  display: none;
+}
+
+nav {
+  width: 99%;
+  margin: auto;
+  padding: 5px;
+}
+
+nav li {
+    float: left;
+}
+
+nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #3FBF7F;
+}
+
+.container {
+  width: 60%;
+  margin: auto;
+  padding: 25px;
+  /*background-color: white;*/
+  border-radius: 20px;
+}
+
+#create-group-link, #create-event-link {
+  margin-bottom: 2%;
+}
+
+.group-summary {
+  padding-bottom: 20px;
+}
+
+.form {
+  width: 75%;
+  clear: both;
+}
+
+.form input, textarea {
+  width: 100%;
+  border: 1px solid black;
+  clear: both;
+  margin-bottom: 10px;
+}
+
+.register {
+  width: 100%;
+  border: 1px solid black;
+}
+
+h1 {
+  color: yellow;
+}
+
+.index-section {
+  padding: 1% 5% 2% 5%;
+  margin-bottom: 1%;
+  border-radius: 20px;
+  background-color: #DEDCDC;
+}
+
+.group-section, .events-section {
+  padding: 2% 5% 2% 5%;
+  margin-bottom: 1%;
+  border-radius: 20px;
+  background-color: #DEDCDC;
+}
+
+.no-bottom-border-radius {
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  margin-bottom: 0px;
+}
+
+#section-2 {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  background-color: #FFFFFF;
+}

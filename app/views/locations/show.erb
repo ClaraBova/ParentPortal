@@ -1,0 +1,12 @@
+<h2><%= @location.city %>, <%= @location.state %></h2>
+
+ <div class="section group">
+  <div>
+      <h3>Local Events</h3>
+  </div>
+
+  <div>
+    <h3>Local Groups</h3>
+      <%= erb :'/groups/index', layout: false %>
+  </div>
+</div>
